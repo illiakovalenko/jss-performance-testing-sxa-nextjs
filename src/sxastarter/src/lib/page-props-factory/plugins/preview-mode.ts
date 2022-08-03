@@ -10,7 +10,8 @@ class PreviewModePlugin implements Plugin {
     if (!context.preview) return props;
 
     // If we're in preview (editing) mode, use data already sent along with the editing request
-    const data = await editingDataService.getEditingData(context.previewData);
+    const data = editingDataService.getEditingData(context.previewData);
+
     if (!data) {
       throw new Error(
         `Unable to get editing data for preview ${JSON.stringify(context.previewData)}`
