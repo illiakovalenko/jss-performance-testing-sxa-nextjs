@@ -1,4 +1,4 @@
-import { editingDataService } from '@sitecore-jss/sitecore-jss-nextjs';
+import { editingDataService } from '@sitecore-jss/sitecore-jss-nextjs/middleware';
 import { SitecorePageProps } from 'lib/page-props';
 import { GetServerSidePropsContext, GetStaticPropsContext } from 'next';
 import { Plugin } from '..';
@@ -9,8 +9,13 @@ class PreviewModePlugin implements Plugin {
   async exec(props: SitecorePageProps, context: GetServerSidePropsContext | GetStaticPropsContext) {
     if (!context.preview) return props;
 
-    // If we're in preview (editing) mode, use data already sent along with the editing request
-    const data = editingDataService.getEditingData(context.previewData);
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    // if (context.preview && typeof window === undefined) {
+
+    // console.log('MODULE...........................', m);
+    // }
+
+    const data = editingDataService().getEditingData(context.previewData);
 
     if (!data) {
       throw new Error(
