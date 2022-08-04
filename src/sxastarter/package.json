@@ -29,7 +29,7 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@sitecore-jss/sitecore-jss-nextjs": "20.1.0-test.2",
+    "@sitecore-jss/sitecore-jss-nextjs": "20.1.0-test.4",
     "bootstrap": "^5.1.3",
     "font-awesome": "^4.7.0",
     "graphql": "~15.8.0",
