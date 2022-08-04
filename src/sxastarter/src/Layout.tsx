@@ -30,6 +30,8 @@ const Layout = ({ layoutData }: LayoutProps): JSX.Element => {
   const isPageEditing = layoutData.sitecore.context.pageEditing;
   const mainClassPageEditing = isPageEditing ? 'editing-mode' : 'prod-mode';
 
+  console.log('LAYOUT COMPONENT....');
+
   return (
     <>
       <Head>
